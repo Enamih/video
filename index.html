@@ -1,0 +1,137 @@
+<!DOCTYPE html>
+<html lang="sr">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="style.css" rel="stylesheet">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/animejs/2.0.2/anime.min.js"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link href="https://fonts.googleapis.com/css?family=Teko:700&display=swap" rel="stylesheet">
+
+    <title>Galić Law Office - Početna</title>
+    <link rel="icon" type="image/x-icon" href="img/favicon.JPG">
+</head>
+<body>
+    <div class="container">
+    <video autoplay muted loop id="myVideo">
+        <source src="video1.mp4" type="video/mp4">
+        Your browser does not support HTML5 video.
+      </video>
+    </div>
+    <div class="topnav" id="myTopnav">
+        <div class="all">
+           <a href="javascript:void(0);" class="icon" onclick="myFunction()">
+              <i class="fa fa-bars"></i>
+          </a>
+          <a href="javascript:void(0);" class="iconX" onclick="myFunction()">
+              <i class="fa fa-times"></i>
+          </a>
+          <a href="index.html" class="logo2"><img src="img/logo1.png" class="logo1"> </a>
+          
+          <a href="index.html"><img src="img/logo1.png" class="logo"> </a>
+          <div class="dropdown1">
+            <button class="dropbtn">SR 
+              <i class="fa fa-caret-down"></i>
+            </button>
+            <div class="dropdown-content">
+              <a href="indexEn.html">EN</a>
+              <a href="indexRU.html">RU</a>
+            </div>
+          </div>
+        </div>
+        <div class="nav">
+          
+            <a class="active" href="index.html">Početna</a>
+            <a href="about.html">O nama</a>
+            <a href="services.html">Naše usluge</a>
+            <a href="articles.html">Članci</a>
+            <a href="contact.html">Kontakt</a>
+            <div class="dropdown">
+              <button class="dropbtn">SR 
+                <i class="fa fa-caret-down"></i>
+              </button>
+              <div class="dropdown-content">
+                <a href="aboutEN.html">EN</a>
+                <a href="aboutRU.html">RU</a>
+              </div>
+            </div>
+        </div>
+          
+          
+      </div>
+
+    
+        <div class="text">
+            <p class="text1">Znanje.</p>
+            <p class="text1">Iskustvo.</p>
+            <p class="text1">Uspeh.</p>
+        </div>
+
+        <p class="ml3">Advokatska kancelarija Galić pruža sveobuhvatne pravne usluge klijentima iz različitih industrija, sa naročitim naglaskom na područja Republike Srbije, Crne Gore, kao i Bosne i Hercegovine.</p>
+
+
+
+    <div class="textResp">
+        <h2 class="text1">Znanje.</h2>
+        <h1 class="text1">Iskustvo.</h1>
+        <h1 class="text1">Uspeh.</h1>
+    </div>
+    
+    <p class="ml3Resp">Advokatska kancelarija Galić pruža sveobuhvatne pravne usluge klijentima iz različitih industrija, sa naročitim naglaskom na područja Republike Srbije, Crne Gore, kao i Bosne i Hercegovine.</p>
+
+  
+    <script>
+        var textWrapper = document.querySelector('.ml3');
+        textWrapper.innerHTML = textWrapper.textContent.replace(/\S/g, "<span class='letter'>$&</span>");
+
+        anime.timeline({loop: true})
+        .add({
+            targets: '.ml3 .letter',
+            opacity: [0,1],
+            easing: "easeInOutQuad",
+            duration: 1250,
+            delay: (el, i) => 50 * (i+1)
+        }).add({
+            targets: '.ml3',
+            opacity: 0,
+            duration: 1000,
+            easing: "easeOutExpo",
+            delay: 5000
+        });
+
+
+        var textWrapper = document.querySelector('.ml3Resp');
+        textWrapper.innerHTML = textWrapper.textContent.replace(/\S/g, "<span class='letter'>$&</span>");
+
+        anime.timeline({loop: true})
+        .add({
+            targets: '.ml3Resp .letter',
+            opacity: [0,1],
+            easing: "easeInOutQuad",
+            duration: 1250,
+            delay: (el, i) => 50 * (i+1)
+        }).add({
+            targets: '.ml3Resp',
+            opacity: 0,
+            duration: 1000,
+            easing: "easeOutExpo",
+            delay: 5000
+        });
+    </script>
+
+    <!--Hamburger menu-->
+    <script>
+        function myFunction() {
+            var x = document.getElementById("myTopnav");
+            if (x.className === "topnav") {
+                x.className += " responsive";
+            } else {
+                x.className = "topnav";
+            } 
+        }
+    </script>
+ 
+
+</body>
+</html>
