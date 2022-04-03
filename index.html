@@ -1,171 +1,29 @@
-<!DOCTYPE html>
-<html lang="sr">
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <link href="style.css" rel="stylesheet">
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/animejs/2.0.2/anime.min.js"></script>
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
-    <link href="https://fonts.googleapis.com/css?family=Teko:700&display=swap" rel="stylesheet">
+<!DOCTYPE html> 
+<html> 
+<body> 
 
-    <title>Galić Law Office - Početna</title>
-    <link rel="icon" type="image/x-icon" href="img/favicon.JPG">
-</head>
-<body>
+<button onclick="getPlaySpeed()" type="button">What is the playback speed?</button>
+<button onclick="setPlaySpeed()" type="button">Set video to be play in slow motion</button><br> 
 
-  <video autoplay muted loop id="myVideo">
-    <source src="video.mp4" type="video/mp4">
-    Your browser does not support HTML5 video.
-  </video>
+<video id="myVideo" width="320" height="176" controls>
+  <source src="img/video.mp4" type="video/mp4">
+  <source src="mov_bbb.ogg" type="video/ogg">
+  Your browser does not support HTML5 video.
+</video>
 
-    <div class="topnav" id="myTopnav">
-        <div class="all">
-           <a href="javascript:void(0);" class="icon" onclick="myFunction()">
-              <i class="fa fa-bars"></i>
-          </a>
-          <a href="javascript:void(0);" class="iconX" onclick="myFunction()">
-              <i class="fa fa-times"></i>
-          </a>
-          <a href="index.html" class="logo2"><img src="img/logo1.png" class="logo1"> </a>
-          
-          <a href="index.html"><img src="img/logo1.png" class="logo"> </a>
-          <div class="dropdown1">
-            <button class="dropbtn">SR 
-              <i class="fa fa-caret-down"></i>
-            </button>
-            <div class="dropdown-content">
-              <a href="indexEn.html">EN</a>
-              <a href="indexRU.html">RU</a>
-            </div>
-          </div>
-        </div>
-        <div class="nav">
-          
-            <a class="active" href="index.html">Početna</a>
-            <a href="about.html">O nama</a>
-            <a href="services.html">Naše usluge</a>
-            <a href="articles.html">Članci</a>
-            <a href="contact.html">Kontakt</a>
-            <div class="dropdown">
-              <button class="dropbtn">SR 
-                <i class="fa fa-caret-down"></i>
-              </button>
-              <div class="dropdown-content">
-                <a href="aboutEN.html">EN</a>
-                <a href="aboutRU.html">RU</a>
-              </div>
-            </div>
-        </div>
-          
-          
-      </div>
+<script>
+var vid = document.getElementById("myVideo");
 
-    
-        <div class="text">
-            <p class="text1">Znanje.</p>
-            <p class="text1">Iskustvo.</p>
-            <p class="text1">Uspeh.</p>
-        </div>
+function getPlaySpeed() { 
+  alert(vid.playbackRate);
+} 
 
-        <p class="ml3">Advokatska kancelarija Galić pruža sveobuhvatne pravne usluge klijentima iz različitih industrija, sa naročitim naglaskom na područja Republike Srbije, Crne Gore, kao i Bosne i Hercegovine.</p>
+function setPlaySpeed() { 
+  vid.playbackRate = 0.5;
+} 
+</script> 
 
+<p>Video courtesy of <a href="https://www.bigbuckbunny.org/" target="_blank">Big Buck Bunny</a>.</p>
 
-
-    <div class="textResp">
-        <p class="text1">Znanje.</p>
-        <p class="text1">Iskustvo.</p>
-        <p class="text1">Uspeh.</p>
-    </div>
-    
-    <video autoplay muted loop id="myVideo1">
-      <source src="video.mp4" type="video/mp4">
-      Your browser does not support HTML5 video.
-    </video>
-
-    <p class="ml3Resp">Advokatska kancelarija Galić pruža sveobuhvatne pravne usluge klijentima iz različitih industrija, sa naročitim naglaskom na područja Republike Srbije, Crne Gore, kao i Bosne i Hercegovine.</p>
-
-  
-    <script>
-        var textWrapper = document.querySelector('.ml3');
-        textWrapper.innerHTML = textWrapper.textContent.replace(/\S/g, "<span class='letter'>$&</span>");
-
-        anime.timeline({loop: true})
-        .add({
-            targets: '.ml3 .letter',
-            opacity: [0,1],
-            start: 5000,  
-            easing: "easeInOutQuad",
-            duration: 1250,
-            delay: (el, i) => 50 * (i+1)
-        }).add({
-            targets: '.ml3',
-            opacity: 0,
-            duration: 1000,
-            easing: "easeOutExpo",
-            delay: 5000
-        });
-
-
-        var textWrapper = document.querySelector('.ml3Resp');
-        textWrapper.innerHTML = textWrapper.textContent.replace(/\S/g, "<span class='letter'>$&</span>");
-
-        anime.timeline({loop: true})
-        .add({
-            targets: '.ml3Resp .letter',
-            opacity: [0,1],
-            easing: "easeInOutQuad",
-            duration: 1250,
-            delay: (el, i) => 50 * (i+1)
-        }).add({
-            targets: '.ml3Resp',
-            opacity: 0,
-            duration: 1000,
-            easing: "easeOutExpo",
-            delay: 5000
-        });
-    </script>
-
-    <!--Hamburger menu-->
-    <script>
-        function myFunction() {
-            var x = document.getElementById("myTopnav");
-            if (x.className === "topnav") {
-                x.className += " responsive";
-            } else {
-                x.className = "topnav";
-            } 
-        }
-    </script>
- 
- <footer id="footer">
-  <hr>
-  <div class="footerAll">
-          <p>
-            <div class="left">
-              <h3>Adresa:</h3>
-              Kneza Mihaila 30/V<br>
-              Beograd, 11000<br>
-              Republika Srbija <br>
-            </div>
-            <div class="centerDiv">
-              <h3>Telefon:</h3> <a href="tel:+381 64 25 77 852">+381 64 25 77 852</a><br>
-              <h3>Email:</h3> <a href="mailto:office@galic.rs">office@galic.rs</a><br>
-            </div>
-            <div class="right">
-              <div><a href="https://www.facebook.com/GalicLaw/"><img src="img/social/facebook.png" class="social-media"></a></div>
-            <div><a href="https://www.instagram.com/galic_law/"><img src="img/social/instagram.png" class="social-media"></a></div>
-            <div><a href="https://www.linkedin.com/company/gali%C4%87-law/about/"><img src="img/social/linkedin.png" class="social-media"></a></div>
-              
-            </div>
-          </p>
-    </div>
-    <hr>
-  <div class="container">
-    <div class="copyright">
-      &copy; Copyright <strong>Galić Law Office 2022</strong>. All Rights Reserved
-    </div>
-  </div>
-</footer>
-</body>
+</body> 
 </html>
